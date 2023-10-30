@@ -13,6 +13,30 @@ class Home extends BaseController
     {
         return view('tabelmhs');
     }
+
+    public function travel() 
+    {
+       return view('dtravel'); 
+    }
+
+    public function hitungbiaya()
+    {
+        $kode = $this->request->getPost('kode');
+        $agenda = $this->request->getPost('agenda');
+        $trns = $this->request->getPost('transportasi');
+        $penginapan = $this->request->getPost('penginapan');
+        $pokok = $this->request->getPost('pokok');
+        $total = $this->request->getPost('total');
+        echo "<br>";
+        echo "<center>";
+        echo "Kode Keberangkatan: $kode <br> ";
+        echo "Agenda : $agenda<br>";
+        echo "Biaya Transportasi : $trns<br>";
+        echo "Biaya Penginapan : $penginapan<br>";
+        echo "Biaya Pokok : $pokok<br>";
+        echo "Total : $total<br>";
+        echo "</center>"; 
+    }
     
     public function proses()
     {
@@ -23,7 +47,7 @@ class Home extends BaseController
         $uas = $this->request->getPost('nuas');
         echo "<center>";
         echo "NoBP: $nobp <br> ";
-        echo "Nama : $nama<br>";
+        echo "Nama : $nama<br>"; 
         echo "Tugas : $tgs<br>";
         echo "UTS : $uts<br>";
         echo "UAS : $uas<br>";
