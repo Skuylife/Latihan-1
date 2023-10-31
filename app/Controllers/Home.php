@@ -19,6 +19,11 @@ class Home extends BaseController
        return view('dtravel'); 
     }
 
+    public function bay()
+    {
+        return view('pembayaran');
+    }
+
     public function hitungbiaya()
     {
         $kode = $this->request->getPost('kode');
@@ -36,6 +41,26 @@ class Home extends BaseController
         echo "Biaya Pokok : $pokok<br>";
         echo "Total : $total<br>";
         echo "</center>"; 
+    }
+
+    public function bayar()
+    {
+        $bks = $this->request->getPost('bakso');
+        $smy = $this->request->getPost('somay');
+        $ma = $this->request->getPost('mieayam');
+        $est = $this->request->getPost('est');
+        $mbr = $this->request->getPost('member');
+        $total = $this->request->getPost('total');
+        echo "<br>";
+        echo "<center>";
+        echo "Form Pembayaran<br> ";
+        echo "Bakso: $bks <br> ";
+        echo "Somay : $smy<br>";
+        echo "Mie Ayam : $ma<br>";
+        echo "Es Teh : $est<br>";
+        echo "Member : $mbr<br>";
+        echo "Total : $total<br>";
+        echo "</center>";
     }
     
     public function proses()
