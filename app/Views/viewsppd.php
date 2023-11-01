@@ -18,7 +18,7 @@
 <body>
     <center>
         <br>
-        <form method="post" name="form" action="hitungbiaya">
+        <form method="post" name="form" action="<?=base_url('Home/simpan')?>">
             <table border="1">
                 <tr>
                     <td>Kode Keberangkatan</td>

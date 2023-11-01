@@ -16,7 +16,7 @@ class Home extends BaseController
 
     public function travel() 
     {
-       return view('dtravel'); 
+       return view('viewsppd'); 
     }
 
     public function bay()
@@ -62,6 +62,40 @@ class Home extends BaseController
         echo "Total : $total<br>";
         echo "</center>";
     }
+
+    public function simpan()
+    {
+        $db = \Config\Database::connect();
+        $data =[
+            'kode' => $this->request->getPost('kode'),
+            'agenda' => $this->request->getPost('agenda'),
+            'btransportasi' => $this->request->getPost('transportasi'),
+            'bpenginapan' => $this->request->getPost('penginapan'),
+            'bpokok' => $this->request->getPost('pokok'),
+            'total' => $this->request->getPost('total'),
+        ];
+        $simpan = $db->table('sppd')->insert($data);
+        if ($simpan = TRUE) {
+            echo "<script>
+            alert('Data Berhasil Disimpan');
+            window.location='/home/tampil'
+            </script>";
+        } else {
+            echo "<script>
+            alert('Data Gagal Disimpan');
+            window.location='/home/sppd'
+            </script>";
+        }
+    }
+
+    function tampil()
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('sppd');
+        $query = $builder->get();
+        $data ['sppdok'] = $query->getResultArray();
+        return view('tampilsppd', $data);
+    }
     
     public function proses()
     {
@@ -79,5 +113,6 @@ class Home extends BaseController
         $hasil = ($uas*0.3) + ($uts*0.3) + ($tgs*0.4);
         echo $hasil;
         echo "</center>";
-}
+    }
+
 }
