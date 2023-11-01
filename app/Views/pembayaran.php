@@ -71,11 +71,11 @@
     }
 
     function proses() {
-        var bakso = document.form.bakso.value;
-        var somay = document.form.somay.value;
-        var mieayam = document.form.mieayam.value;
-        var est = document.form.est.value;
-        var total = (parseInt(bakso) * 10000) + (parseInt(somay) * 12000) + (parseInt(mieayam) * 12000) + (parseInt(est) * 4000 );
+        var bakso = (document.form.bakso.value)*10000;
+        var somay = (document.form.somay.value)*12000;
+        var mieayam = (document.form.mieayam.value)*12000;
+        var est = (document.form.est.value)*4000;
+        var total = parseInt(bakso) + parseInt(somay) + parseInt(mieayam) + parseInt(est);
         document.form.total.value = total;
     }
 </script>
