@@ -24,6 +24,11 @@ class Home extends BaseController
         return view('pembayaran');
     }
 
+    public function previus()
+    {
+        return view('viewsppd');
+    }
+
     public function hitungbiaya()
     {
         $kode = $this->request->getPost('kode');

@@ -39,6 +39,10 @@
                     <td><?= $data['total'] ?></td>
                 </tr>
             <?php endforeach; ?>
+            <tr>
+                <td><input type="submit" herf="previus" value="Previous" /></td>
+            </tr>
+
         </table>
     </center>
 </body>
