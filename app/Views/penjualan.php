@@ -21,12 +21,12 @@
         <form method="post" name="form" action="<?= base_url('Quiz/simpan') ?>">
             <table border="1">
                 <tr>
-                    <td>Kode Baju</td>
-                    <td><select name="kode" id="kode" onchange="jbaju()">
+                    <td>Kode Sepeda</td>
+                    <td><select name="kode" id="kode" onchange="jsp()">
                             <option value="">Pilih</option>
-                            <option value="b001">B001</option>
-                            <option value="b002">B002</option>
-                            <option value="b003">B003</option>
+                            <option value="s001">S001</option>
+                            <option value="s002">S002</option>
+                            <option value="s003">S003</option>
                         </select>
                     </td>
                 </tr>
@@ -35,16 +35,16 @@
                     <td><input type="text" name="jenis"></td>
                 </tr>
                 <tr>
-                    <td>Harga</td>
-                    <td><input type="text" name="harga"></td>
+                    <td>Harga Semua</td>
+                    <td><input type="text" name="hargasm"></td>
                 </tr>
                 <tr>
-                    <td>Jumlah</td>
-                    <td><input type="text" name="jumlah" onkeyup="hbaju()"></td>
+                    <td>Jumlah Beli</td>
+                    <td><input type="text" name="jumlah" onkeyup="hs()"></td>
                 </tr>
                 <tr>
-                    <td>Total</td>
-                    <td><input type="text" name="total" onkeyup="hbaju()" ></td>
+                    <td>Harga Satuan</td>
+                    <td><input type="text" name="hargas" onkeyup="hs()" ></td>
                 </tr>
                 <tr>
                     <td><input type="submit" name="Simpan" value="Proses"></td>
@@ -56,22 +56,22 @@
 
 </html>
 <script>
-    function jbaju() {
+    function jsp() {
         var kode = document.form.kode.value;
         var js = document.form.jenis.value;
-        if (kode == "b001") {
-            document.form.jenis.value = "KoKo";
-        } else if (kode == "b002") {
-            document.form.jenis.value = "Gaun";
+        if (kode == "s001") {
+            document.form.jenis.value = "Polygon";
+        } else if (kode == "s002") {
+            document.form.jenis.value = "Samki";
         } else {
-            document.form.jenis.value = "Kaos";
+            document.form.jenis.value = "Gunung";
         }
     }
 
-    function hbaju() {
-        var hrg = document.form.harga.value;
+    function hs() {
+        var hrg = document.form.hargasm.value;
         var jmlh = document.form.jumlah.value;
-        var total = parseInt(hrg) * parseInt(jmlh);
-        document.form.total.value = total;
+        var total = parseInt(hrg) / parseInt(jmlh);
+        document.form.hargas.value = total;
     }
 </script>

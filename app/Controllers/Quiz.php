@@ -10,7 +10,7 @@ class Quiz extends BaseController
         $db = \Config\Database::connect();
         $builder = $db->table('jual'); //nama tabel di database
         $query = $builder->get();
-        $data['jbaju'] = $query->getResultArray();
+        $data['jspd'] = $query->getResultArray();
         return view('tampiljual', $data); //view
     }
 
@@ -20,9 +20,9 @@ class Quiz extends BaseController
         $data = [
             'kode' => $this->request->getPost('kode'), // memanggil name pada form dengan method post
             'jenis' => $this->request->getPost('jenis'),
-            'hrg' => $this->request->getPost('harga'),
+            'hrgsm' => $this->request->getPost('hargasm'),
             'jml' => $this->request->getPost('jumlah'),
-            'total' => $this->request->getPost('total'),
+            'hrgs' => $this->request->getPost('hargas'),
         ];
         $simpan = $db->table('jual')->insert($data);
         if ($simpan = TRUE) {

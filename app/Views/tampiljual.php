@@ -16,25 +16,25 @@
 
 <body>
     <center>
-        <h2>Tampil Data Penjualan</h2>
+        <h2>Tampil Data Penjualan Sepeda</h2>
         <hr>
         <table border="1">
             <tr>
-                <td>Kode Baju</td>
+                <td>Kode Sepeda</td>
                 <td>Jenis</td>
-                <td>Harga </td>
+                <td>Harga Semua </td>
                 <td>Jumlah</td>
-                <td>Total</td>
+                <td>Harga Satuan</td>
             </tr>
             <?php
-            foreach ($jbaju as $data) :
+            foreach ($jspd as $data) :
             ?>
                 <tr>
                     <td><?= $data['kode'] ?></td>
                     <td><?= $data['jenis'] ?></td>
-                    <td><?= $data['hrg'] ?></td>
+                    <td><?= $data['hrgsm'] ?></td>
                     <td><?= $data['jml'] ?></td>
-                    <td><?= $data['total'] ?></td>
+                    <td><?= $data['hrgs'] ?></td>
                 </tr>
             <?php endforeach; ?>
             <tr>
