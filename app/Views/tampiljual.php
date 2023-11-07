@@ -37,11 +37,12 @@
                     <td><?= $data['hrgs'] ?></td>
                 </tr>
             <?php endforeach; ?>
-            <tr>
-                <td><input type="button" value="Go back!" onclick="history.back()"></td>
-            </tr>
+
 
         </table>
+        <tr>
+            <td><input type="button" value="Go back!" onclick="history.back()"></td>
+        </tr>
     </center>
 </body>
 

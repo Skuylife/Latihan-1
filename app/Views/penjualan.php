@@ -44,12 +44,12 @@
                 </tr>
                 <tr>
                     <td>Harga Satuan</td>
-                    <td><input type="text" name="hargas" onkeyup="hs()" ></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" name="Simpan" value="Proses"></td>
+                    <td><input type="text" name="hargas" onkeyup="hs()"></td>
                 </tr>
             </table>
+            <tr>
+                <td><input style="background-color: aqua;" type="submit" name="Simpan" value="Proses"></td>
+            </tr>
         </form>
     </center>
 </body>
